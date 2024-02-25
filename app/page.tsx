@@ -5,7 +5,7 @@ import KanbanCard from "./Components/KanbanCard";
 
 export default function Home() {
   return (
-    <main className="flex  mx-[4vw] max-w-[100vw] min-h-screen">
+    <main className="flex  mx-[4vw]  max-w-[100vw] min-h-screen">
     <Sidebar />
       <Hero />
       

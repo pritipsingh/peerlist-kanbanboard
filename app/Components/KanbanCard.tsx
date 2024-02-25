@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import React from "react";
 import { GoArrowUpRight } from "react-icons/go";
@@ -6,8 +7,6 @@ import { motion } from "framer-motion";
 import { useSession } from "../hooks/useSession";
 const KanbanCard = (props: EachCardPage) => {
     const {user} = useSession()
-
-    console.log(user);
 
     const dragVariants = {
         drag: { scale: 1.1 },

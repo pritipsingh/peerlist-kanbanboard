@@ -95,7 +95,7 @@ export const useDragAndDrop = (setcards: any, cards: any, column: any, title: an
 
         copy.splice(insertAtIndex, 0, cardToMove);
       }
-
+      console.log("copycards", copy)
       setcards(copy);
     }
   }

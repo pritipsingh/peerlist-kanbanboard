@@ -31,9 +31,10 @@ const Column = ({
 
     const { handleDragOver, handleDragLeave, handleDrop, handleDragStart, activeColumn} = useDragAndDrop(setCards, cards, column, title);
 
-    let filteredCards = searchCards.filter((card: any) => card.column === column)
+    console.log("searchcards", searchCards, cards)
+    let filteredCards = searchCards.filter((card: EachCard) => card.column === column)
 
-
+console.log("filteredCard", filteredCards)
   return (
     <div 
     onDrop={handleDrop}
@@ -53,7 +54,7 @@ const Column = ({
           return <KanbanCard key={c.id} {...c} handleDragStart={handleDragStart}/>;
         })}
         <div
-        data-before={-1}
+        data-before={"-1"}
         data-col={column}
         className="my-0.5 z-1 h-7 min-w-full z-1 opacity-0"
       ></div>

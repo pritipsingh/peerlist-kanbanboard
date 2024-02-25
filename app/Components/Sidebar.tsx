@@ -1,8 +1,9 @@
+"use client"
 import Image from "next/image";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { useSession } from "../hooks/useSession";
-
+import { motion } from "framer-motion";
 const SidebarData = [
   {
     logo: "/Sidebar/scroll.svg",
@@ -34,8 +35,8 @@ const Sidebar = () => {
 
   const {user} = useSession()
   return (
-    <nav className="lg:w-64 w-full lg:h-full  p-4 fixed lg:top-0 bottom-0 z-[9999] bg-white">
-      <div className="flex flex-col h-full">
+    <nav className="lg:ml-6 lg:w-63 lg:max-w-full lg:w-auto w-full lg:z-0 lg:h-full z-[99]  p-4 fixed lg:top-0 bottom-0 bg-white">
+      <div className="flex flex-col h-full relative">
         <div className="pb-8 hidden lg:flex">
           <Image
             src={"/Logos/fulllogo.svg"}
@@ -47,11 +48,14 @@ const Sidebar = () => {
         <div>
 
        
-        <div className="flex lg:flex-col lg:mt-[8vh] gap-y-6 lg:overflow-y-auto hide-scrollbard">
+        <div className="flex lg:flex-col lg:mt-[4vh] gap-y-6 lg:overflow-y-auto hide-scrollbar">
           {SidebarData.map((data, index) => (
             <div key={index} className="flex gap-2 w-[100%]">
               <Image src={data.logo} alt={data.title} width={24} height={24} />
-              <p className="hidden lg:flex">{data.title}</p>
+              <motion.p 
+
+              whileHover={{x: "4px" }}
+              className="hidden lg:flex">{data.title}</motion.p>
             </div>
           ))}
         </div>
@@ -69,7 +73,7 @@ const Sidebar = () => {
 
  </div>
        
-        <div className="pb-4 hidden mt-[5vh] lg:flex gap-2 max-w-[100%]">
+        <div className="pb-4 hidden lg:flex mt-[5vh] lg:absolute bottom-0 gap-2 max-w-[100%]">
         
               <div className="flex flex-col text-wrap">
                 <h3 className="text-[#0D0D0D] text-[10px] max-w-full  font-medium flex w-full text-wrap" style={{wordBreak: "break-all" }}>Blog • Help Center • Feedback • Code of Conduct • Privacy • T&C</h3>
