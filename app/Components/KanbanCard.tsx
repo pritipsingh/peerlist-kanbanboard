@@ -3,7 +3,11 @@ import React from "react";
 import { GoArrowUpRight } from "react-icons/go";
 import {  EachCardPage } from "../utils/Data";
 import { motion } from "framer-motion";
+import { useSession } from "../hooks/useSession";
 const KanbanCard = (props: EachCardPage) => {
+    const {user} = useSession()
+
+    console.log(user);
 
     const dragVariants = {
         drag: { scale: 1.1 },
@@ -89,15 +93,15 @@ const KanbanCard = (props: EachCardPage) => {
             />
             Rejected by
             <Image
-              src={props.rejectedbyimg as any}
+              src={props.rejectedbyimg ? props.rejectedbyimg : user.image as any}
               alt={"Profile pics of the potential candidate"}
               width={16}
               height={16}
               className="rounded-full object-contain"
             />
-            <span>{props.rejectedby}</span>
+            <span>{props.rejectedby ? props.rejectedby : user.name}</span>
             on
-            <span>{props.rejectedon}</span>
+            <span>{props.rejectedon ? props.rejectedon : "25 Feb 2023" }</span>
           </div>
 }
           {props.column !== "rejected" && <div className="flex gap-3 pt-2 items-center">
@@ -134,7 +138,7 @@ const KanbanCard = (props: EachCardPage) => {
               </p>
             </div>}
           </div> }
-        {(props.column === "applied" || props.column === "shortlisted" && !props.external && props.email && props.phone)&&  <div className="flex flex-col gap-1 pt-2">
+        {((props.column === "applied" || props.column === "shortlisted") && !props.external && props.email && props.phone)&&  <div className="flex flex-col gap-1 pt-2">
             <p className="text-gray-500  font-normal text-[10px] leading-[14px]">
               Contact
             </p>
@@ -157,15 +161,15 @@ const KanbanCard = (props: EachCardPage) => {
             />
             Shortlisted by
             <Image
-              src={props.shortlistedbyImg as any}
+              src={props.shortlistedbyImg ? props.shortlistedbyImg : user.image  as any}
               alt={"Profile pics of the potential candidate"}
               width={16}
               height={16}
               className="rounded-full object-contain"
             />
-            <span>{props.shortlistedby}</span>
+            <span className="font-semibold">{props.shortlistedby ? props.shortlistedby :  user.name}</span>
             on
-            <span>{props.shortlistedon}</span>
+            <span>{props.shortlistedon ? props.shortlistedon : "25 Feb 2023"}</span>
           </div>
 }
         </div>
@@ -180,12 +184,12 @@ const KanbanCard = (props: EachCardPage) => {
               className="rounded-full object-contain"
             />
             <span className=" font-medium">{props.refby}</span>
-            {/* <span>{props.shortlistedby}</span> */}
+            
             </div>}
             <div>
 
             </div>
-          Applied {props.applied} ago
+        {props.applied &&  `Applied ${props.applied} ago`}
         </div>
       </div>
     </motion.div>

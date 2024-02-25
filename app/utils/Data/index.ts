@@ -106,14 +106,14 @@ export const cardDetails: EachCard[] = [
     
         {
             id: "4",
-            image: "/",
+            image: "/Faces/face2.svg",
             name: "Leslie Alexander",
             description: "Clous Consultant at Rapid Circle",
             column: "applied",
             experience: "11 y 6m",
             verified: true,
             refby: "Maddie",
-            refImg:  "/Faces/face.svg",
+            refImg:  "/Faces/face3.svg",
             offer: true,
             notice: "Immediete",
             email: "darrell.stewards@emaildomain.com",
@@ -123,7 +123,7 @@ export const cardDetails: EachCard[] = [
     
         {
             id:"5",
-            image:"/Faces/face1.svg",
+            image:"/Faces/face4.jpeg",
             name: "Leslie Alexander",
             description: "Clous Consultant at Rapid Circle",
             column: "applied",
@@ -139,7 +139,7 @@ export const cardDetails: EachCard[] = [
         },
         {
             id:"6",
-            image:"/Faces/face1.svg",
+            image:"/Faces/face3.svg",
             name: "Priti",
             description: "Clous Consultant at Rapid Circle",
             column: "shortlisted",
@@ -155,8 +155,8 @@ export const cardDetails: EachCard[] = [
             phone:"+1 12345 67490"
         },
         {
-            id:"6",
-            image:"/Faces/face1.svg",
+            id:"7",
+            image:"/Faces/face4.jpeg",
             name: "Priti",
             description: "Clous Consultant at Rapid Circle",
             column: "shortlisted",

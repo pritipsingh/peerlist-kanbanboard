@@ -126,7 +126,7 @@ export const useDragAndDrop = (setcards: any, cards: any, column: any, title: an
       (closest, child) => {
     
         let box = child.getBoundingClientRect();
-        let offset = e.clientY - (box.top + DISTANCE_OFFSET);
+        let offset = e.clientY - (box.top + box.height / 2);
 
         if (offset < 0 && offset > closest.offset) {
           return { offset: offset, element: child };

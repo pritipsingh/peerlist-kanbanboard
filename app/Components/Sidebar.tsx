@@ -1,6 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
+import { useSession } from "../hooks/useSession";
+
 const SidebarData = [
   {
     logo: "/Sidebar/scroll.svg",
@@ -29,10 +31,12 @@ const SidebarData = [
 ];
 
 const Sidebar = () => {
+
+  const {user} = useSession()
   return (
-    <nav className="w-64 h-full p-4 fixed top-0">
-      <div className="flex flex-col justify-between h-full">
-        <div className="pb-8">
+    <nav className="lg:w-64 w-full lg:h-full  p-4 fixed lg:top-0 bottom-0 z-[9999] bg-white">
+      <div className="flex flex-col h-full">
+        <div className="pb-8 hidden lg:flex">
           <Image
             src={"/Logos/fulllogo.svg"}
             width={124}
@@ -43,20 +47,20 @@ const Sidebar = () => {
         <div>
 
        
-        <div className="flex flex-col -mt-[8vh] gap-y-6 overflow-y-auto hide-scrollbard">
+        <div className="flex lg:flex-col lg:mt-[8vh] gap-y-6 lg:overflow-y-auto hide-scrollbard">
           {SidebarData.map((data, index) => (
-            <div className="flex gap-2 w-[100%]">
+            <div key={index} className="flex gap-2 w-[100%]">
               <Image src={data.logo} alt={data.title} width={24} height={24} />
-              <p>{data.title}</p>
+              <p className="hidden lg:flex">{data.title}</p>
             </div>
           ))}
         </div>
-        <div className="mt-[7vh] flex gap-2 w-[100%] rounded-full ">
-        <Image src={"/Faces/face1.svg"} alt={"Priti's Profile Pic"} width={24} height={24} />
-              <p>{"Priti"}</p>
+        <div className="mt-[7vh] lg:flex gap-2 w-[100%] hidden ">
+        <Image src={user.image} alt={"Priti's Profile Pic"} width={24} height={24} className="rounded-full object-contain" />
+              <p>{user.name}</p>
         </div> 
-        <div className="mt-[3vh] flex gap-2 w-[100%] flex-wrap rounded-full ">
-        <Image src={"/Sidebar/loom.svg"} alt={"Priti's Profile Pic"} width={24} height={24} />
+        <div className="mt-[3vh] lg:flex hidden gap-2 w-[100%] flex-wrap  ">
+        <Image src={"/Sidebar/loom.svg"} alt={"Priti's Profile Pic"} width={24} height={24} className="rounded-full object-contain"  />
               <div className="flex flex-col flex-wrap ">
                 <h3>Loom</h3>
                 <p className="text-[#0D0D0D] text-[10px] max-w-full text-wrap font-normal">Manage jobs, teams, & more →</p>
@@ -65,7 +69,7 @@ const Sidebar = () => {
 
  </div>
        
-        <div className="pb-4 flex gap-2 max-w-[100%]">
+        <div className="pb-4 hidden mt-[5vh] lg:flex gap-2 max-w-[100%]">
         
               <div className="flex flex-col text-wrap">
                 <h3 className="text-[#0D0D0D] text-[10px] max-w-full  font-medium flex w-full text-wrap" style={{wordBreak: "break-all" }}>Blog • Help Center • Feedback • Code of Conduct • Privacy • T&C</h3>
