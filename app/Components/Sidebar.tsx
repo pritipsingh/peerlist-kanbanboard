@@ -50,7 +50,7 @@ const Sidebar = () => {
        
         <div className="flex lg:flex-col lg:mt-[4vh] gap-y-6 lg:overflow-y-auto hide-scrollbar">
           {SidebarData.map((data, index) => (
-            <div key={index} className="flex gap-2 w-[100%]">
+            <a key={index} className="flex cursor-pointer gap-2 w-[100%]">
               <span className="relative">
               <Image src={data.logo} alt={data.title} width={24} height={24}></Image>
               {
@@ -65,7 +65,7 @@ const Sidebar = () => {
               className="hidden lg:flex">{data.title}</motion.p>
               
 
-            </div>
+            </a>
             
           ))}
         </div>
@@ -86,7 +86,7 @@ const Sidebar = () => {
         <div className="pb-4 hidden lg:flex mt-[5vh] lg:absolute bottom-0 gap-2 max-w-[100%]">
         
               <div className="flex flex-col text-wrap">
-                <h3 className="text-[#0D0D0D] text-[10px] max-w-full  font-medium flex w-full text-wrap" style={{wordBreak: "break-all" }}>Blog • Help Center • Feedback • Code of Conduct • Privacy • T&C</h3>
+                <h3 className="text-[#0D0D0D] cursor-pointer text-[10px] max-w-full  font-medium flex w-full text-wrap" style={{wordBreak: "break-all" }}>Blog • Help Center • Feedback • Code of Conduct • Privacy • T&C</h3>
                 <p className="text-[#44D56] text-[10px] font-normal ">© 2023 Peerlist Inc.</p>
               </div>
         </div>

@@ -9,7 +9,7 @@ export default function Home() {
       <div className="lg:mx-[4vw] mx-0">
       <Sidebar />
       <Hero />
-        </div>
+      </div>
    
       
     </main>

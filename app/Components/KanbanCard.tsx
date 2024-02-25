@@ -51,7 +51,7 @@ const KanbanCard = (props: EachCardPage) => {
       y: 0,
     }}
     variants={dragVariants}
-    className="max-w-[400px] shrink-0 text-[#0D0D0D] text-wrap m-2 bg-white rounded-md p-3 border border-solid border-gray-100">
+    className="max-w-[400px] cursor-grab focus:cursor-grabbing shrink-0 text-[#0D0D0D] text-wrap m-2 bg-white rounded-md p-3 border border-solid border-gray-100">
       <div className=" w-full relative ">
         <div className="flex flex-col gap-1">
          {!props.external && <Image
