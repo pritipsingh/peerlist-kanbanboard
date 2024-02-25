@@ -31,20 +31,21 @@ const Column = ({
 
     const { handleDragOver, handleDragLeave, handleDrop, handleDragStart, activeColumn} = useDragAndDrop(setCards, cards, column, title);
 
-    console.log("searchcards", searchCards, cards)
+ 
     let filteredCards = searchCards.filter((card: EachCard) => card.column === column)
 
-console.log("filteredCard", filteredCards)
+
   return (
     <div 
     onDrop={handleDrop}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
-    className={`flex-grow shrink-0 relative w-[308px] ${
+    className={`flex-grow shrink-0 relative w-[306px] ${
         activeColumn ? "bg-stone-200" : "bg-[#FAFBFC]"
-      }  flex-basis-[33.333%] h-[100vh] transition-colors overflow-scroll rounded-md border border-solid  ${headingColor}`}>
+      }  h-[100vh] 
+      transition-colors overflow-y-auto overflow-x-hidden rounded-md border border-solid  ${headingColor}`}>
 
-      <div className={` w-full z-[99]  sticky left-0 top-0 gap-2 flex rounded-t p-2 py-4 h-[16px]  ${backgroundColor} items-center`}>
+      <div className={` w-full  sticky left-0 top-0 gap-2 flex rounded-t p-2 ${backgroundColor} items-center`}>
       <Image src={icon} alt={title} width={16} height={16} />
         <h3 className={`font-semibold ${textColor} text-[12px] leading-[16px]`}>{`${title.toUpperCase()} • ${filteredCards.length} `}</h3>
        
@@ -56,7 +57,7 @@ console.log("filteredCard", filteredCards)
         <div
         data-before={"-1"}
         data-col={column}
-        className="my-0.5 z-1 h-7 min-w-full z-1 opacity-0"
+        className="my-0.5 h-7 min-w-full opacity-0"
       ></div>
       </div>
   

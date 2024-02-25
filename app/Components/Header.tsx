@@ -5,8 +5,8 @@ import Link from 'next/link';
 import { FaChevronDown } from "react-icons/fa";
 const Header = () => {
   return (
-    <div className='px-4  py-10 text-[0.6rem]   min-h-[11rem] border-b bg-gray-50 border-solid border-gray-200'>
-    <div className='flex justify-between w-full h-full'>
+    <div className='px-4  py-10 max-w-[100vw] min-h-[11rem] border-b bg-gray-50 border-solid border-gray-200'>
+    <div className='flex flex-col lg:flex-row justify-between w-full h-full'>
         <div className='flex gap-2'>
             <div>
 
@@ -17,10 +17,10 @@ const Header = () => {
             
             <div className='flex flex-col flex-wrap h-full justify-between items-start'>
                 <div>
-                <p className='lg:text-[1.2rem] flex gap-2 items-center leading-[24px] font-medium '>Software Engineer, Front End <FaChevronDown /></p>
-                <p className='lg:text-[0.875rem] leading-[20px] font-normal'>at Peerlist • Full time • Remote (United States, Canada)</p>
+                <p className='lg:text-[1.2rem] text-[0.9rem]  flex gap-2 items-center leading-[24px] font-medium '>Software Engineer, Front End <FaChevronDown /></p>
+                <p className='lg:text-[0.875rem] text-[0.6rem]  leading-[20px] font-normal'>at Peerlist • Full time • Remote (United States, Canada)</p>
                 </div>
-                <div className='flex gap-x-6 mt-[5vh]'>
+                <div className='flex gap-x-6 mt-[5vh] text-[0.6rem] '>
                     <p className='lg:text-[0.875rem] leading-[16px] font-normal'><span className='font-semibold'>78</span>{" "}Candidates</p>
                     <p className='lg:text-[0.875rem] leading-[16px] font-normal'><span className='font-semibold'>768</span>{" "}Applied w/ Peerlist</p>
                     <p className='lg:text-[0.875rem] leading-[16px] font-normal'><span className='font-semibold'>2872</span>{" "}Views</p>
@@ -28,7 +28,7 @@ const Header = () => {
                 </div>
             </div>
         </div>
-        <div className='flex flex-col flex-wrap h-[full justify-between items-end'>
+        <div className='flex flex-col lg:mt-0 lg:gap-0 mt-[3vh] gap-3 flex-wrap  justify-between items-end'>
             <div className='flex gap-2'>
                 <Link href= {"/"} >
                 <Image src={"/Icons/edit.svg"} alt={"Priti's Profile Pic"} width={24} height={24} />
@@ -47,7 +47,7 @@ const Header = () => {
  
                 </Link>
             </div>
-            <div className='text-[10px] leading-[14px] font-normal flex items-center text-gray-500'>
+            <div className='lg:text-[10px] text-[8px]  leading-[14px] font-normal flex items-center text-gray-500'>
                 Posted<span className='font-semibold px-1'>1d ago</span>by 
                 <span className='font-semibold flex px-1 items-center'>
                 <Image src={"/Faces/face1.svg"} alt={"Priti's Profile Pic"} width={24} height={24} />

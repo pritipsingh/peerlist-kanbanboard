@@ -14,7 +14,7 @@ const Board = () => {
     return savedCards ? JSON.parse(savedCards) : [...cardDetails];
   };
  // State to manage the cards displayed on the board.
-  const [cards, setCards] = useState<EachCard []>([...cardDetails]);
+  const [cards, setCards] = useState<EachCard []>(getInitialCards);
 
  const [searchCards, setSearchCard] = useState<EachCard[]>([...cards])
 
@@ -23,12 +23,12 @@ const Board = () => {
   setSearchCard([...cards]);
 }, [cards]);
   return (
-    <div className='px-4 py-6 max-w-full'>
+    <div className='px-4 py-6 w-full'>
         <Search cards={cards} searchCards={searchCards} setSearchCard={setSearchCard}/>
-        <div className='flex  gap-3 overflow-auto '>
+        <div className='flex mb-[5vh] gap-3 overflow-x-scroll w-full'>
         {
             columns.map((col, index) => (
-                <Column {...col} searchCards={searchCards} cards={cards} setCards={setCards} />
+                <Column key={index} {...col} searchCards={searchCards} cards={cards} setCards={setCards} />
             ))
         }
        </div>

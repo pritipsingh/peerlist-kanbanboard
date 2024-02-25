@@ -35,7 +35,7 @@ const Sidebar = () => {
 
   const {user} = useSession()
   return (
-    <nav className="lg:ml-6 lg:w-63 lg:max-w-full lg:w-auto w-full lg:z-0 lg:h-full z-[99]  p-4 fixed lg:top-0 bottom-0 bg-white">
+    <nav className="lg:ml-6 lg:w-63 lg:max-w-full lg:w-auto w-full lg:h-full z-[99]  p-4 fixed lg:top-0 bottom-0 bg-white">
       <div className="flex flex-col h-full relative">
         <div className="pb-8 hidden lg:flex">
           <Image
