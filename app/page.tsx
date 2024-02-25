@@ -6,8 +6,11 @@ import KanbanCard from "./Components/KanbanCard";
 export default function Home() {
   return (
     <main className="flex  w-[100vw] min-h-screen">
-    <Sidebar />
+      <div className="lg:mx-[4vw] mx-0">
+      <Sidebar />
       <Hero />
+        </div>
+   
       
     </main>
   );

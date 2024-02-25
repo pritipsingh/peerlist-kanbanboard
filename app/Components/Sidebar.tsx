@@ -51,12 +51,22 @@ const Sidebar = () => {
         <div className="flex lg:flex-col lg:mt-[4vh] gap-y-6 lg:overflow-y-auto hide-scrollbar">
           {SidebarData.map((data, index) => (
             <div key={index} className="flex gap-2 w-[100%]">
-              <Image src={data.logo} alt={data.title} width={24} height={24} />
+              <span className="relative">
+              <Image src={data.logo} alt={data.title} width={24} height={24}></Image>
+              {
+              data.title === "Inbox" && <div className=" absolute bg-[#00AA45] top-0 right-0 w-2 h-2 rounded-full">
+      
+                 </div>
+            }
+            </span>
               <motion.p 
 
               whileHover={{x: "4px" }}
               className="hidden lg:flex">{data.title}</motion.p>
+              
+
             </div>
+            
           ))}
         </div>
         <div className="mt-[7vh] lg:flex gap-2 w-[100%] hidden ">
