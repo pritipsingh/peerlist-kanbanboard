@@ -9,7 +9,7 @@ const Board = () => {
   return (
     <div className='px-4 py-6 max-w-full'>
         <Search />
-        <div className='flex h-full  gap-3 overflow-auto p-4'>
+        <div className='flex  gap-3 overflow-auto '>
         {
             columns.map((col, index) => (
                 <Column {...col} cards={cards} setCards={setCards} />

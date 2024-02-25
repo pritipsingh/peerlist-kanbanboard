@@ -30,7 +30,7 @@ const SidebarData = [
 
 const Sidebar = () => {
   return (
-    <nav className="mx-[4vw] w-64 h-full p-4 fixed top-0 left-0">
+    <nav className="w-64 h-full p-4 fixed top-0">
       <div className="flex flex-col justify-between h-full">
         <div className="pb-8">
           <Image
